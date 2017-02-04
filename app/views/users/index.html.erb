@@ -1,0 +1,24 @@
+<h1>List Of Projects</h1>
+<table class="table table-stripped">
+<tr>
+	<th>Project</th>
+	<th>Hours</th>
+	<th>Desription</th>
+</tr>
+
+<tbody>
+	<% @users.each do |y| %>
+
+ <tr>
+ 	<td><%= y.project%></td>
+ 	<td><%= y.hour %></td>
+ 	<td><%= y.description %></td>
+<% end %>
+
+</tbody>
+
+</tr>
+</table>
+<%= button_to "Back", :controller => "users", :action => "new" %>
+<h1>Add Project</h1>
+<%= link_to "Select Project", :controller => "users", :action => "project" %>

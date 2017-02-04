@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  project: MyString
+  hour: MyString
+  description: MyText
+
+two:
+  project: MyString
+  hour: MyString
+  description: MyText

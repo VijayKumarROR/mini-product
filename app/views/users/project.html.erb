@@ -1,0 +1,13 @@
+<h1>Project</h1>
+	<%# form_for @project do |r| %>
+
+	<div class="control-group">
+		<%#= r.select :id, User.all.map { |a| [a.project, a.id ]}%>
+	</div>
+
+	<div class="control-group">
+		<%#= r.label :client_name %>
+		<%#= r.text_field :client_name %>
+	</div>
+
+<%= button_to "Back", :controller => "users", :action => "new" %>

@@ -1,0 +1,19 @@
+body
+{
+
+	background-color: grey;
+}
+h1{
+	background: blue;
+	width: 270px;
+	color: white;
+}
+textarea.form-control{
+	height: 40px;
+
+}
+
+
+
+
+

@@ -1,0 +1,78 @@
+<!-- <script type="text/javascript">
+
+ function add_response_field(){
+    div_count = j(".container").length
+    op_box = j(".response-field-set:last").clone();
+    op_box.find(".col-md-4:first").find(".text-input-bg:first").find("input[type=text]:first").attr("id","custom_gateway_gateway_parameters_response_parameters_"+(div_count)+"_name");
+    op_box.find(".col-md-4:first").find(".text-input-bg:first").find("input[type=text]:first").attr("name","custom_gateway[gateway_parameters][response_parameters]["+(div_count)+"][name]");
+    op_box.find(".col-md-4:first").find(".text-input-bg:first").find("input[type=text]:first").val("");
+
+    op_box.find(".label-field-pair:last").find(".text-input-bg:first").find("select:first").attr("id","custom_gateway_gateway_parameters_response_parameters_"+(div_count)+"_parameter_type");
+    op_box.find(".label-field-pair:last").find(".text-input-bg:first").find("select:first").attr("name","custom_gateway[gateway_parameters][response_parameters]["+(div_count)+"][parameter_type]");
+    op_box.find(".label-field-pair:last").find(".text-input-bg:first").find("select:first").prop('selectedIndex',0);
+
+    j("#resp-fields").append(op_box);
+  }
+
+</script>
+
+ -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<%= stylesheet_link_tag "bootstrap", :media => "all" %>
+	<%= stylesheet_link_tag "style", :media => "all" %>
+
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/> -->
+	
+</head>
+
+<body>
+<div class="form">
+<button type="button" class="btn btn-default">Add Project</button>
+<h1>Project Creation</h1>
+
+	<%form_for @user do |f| %>
+		<% if @user.errors.any?%>
+        <ul class="errors">
+        	<% @user.errors.full_messages.each do |msg| %>
+        	<li><%= msg %></li>
+        	<% end %>
+        </ul>
+        <% end %>
+  <div class="container">
+  <div class="row">
+	<div class="col-md-4">
+		<%= f.label :project %>
+		<%= f.text_field :project, :class => "col-md-12 form-control" %>
+	</div>
+
+	<div class="col-md-4">
+		<%= f.label :hour %>
+		<%= f.text_field :hour, :class => "col-md-12 form-control" %>
+	</div>
+
+	<div class="col-md-4">
+	<%= f.label :description %>
+	<%= f.text_area :description, :class => "col-md-12 form-control"%>
+	</div>
+  </div>
+  </div>
+
+  <div class="control-submit">
+  <%= f.submit "Save Entity" %>
+  </div>
+
+   <% end %>
+
+</div>
+</html>
+
+<!-- Single button -->
+	<%= javascript_include_tag '../../javascripts/jquery-3.1.1.min.js' %>
+	<%= javascript_include_tag '../../javascripts/bootstrap.min.js' %>
+
+</body>
