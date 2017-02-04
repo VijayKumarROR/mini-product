@@ -32,4 +32,12 @@ protect_from_forgery
 		# end
 	end
 
+
+	def destroy
+		@user = User.find(params[:id])
+		if @user.destroy
+			flash[:notice] = "Delete Successfully"
+		end
+	end
+
 end

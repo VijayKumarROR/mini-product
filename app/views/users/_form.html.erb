@@ -32,7 +32,7 @@
 
 <body>
 <div class="form">
-<button type="button" class="btn btn-default">Add Project</button>
+<button type="button" class="btn btn-default" onclick="add_responce_field(); return false;">Add Project</button>
 <h1>Project Creation</h1>
 
 	<%form_for @user do |f| %>
@@ -59,7 +59,11 @@
 	<%= f.label :description %>
 	<%= f.text_area :description, :class => "col-md-12 form-control"%>
 	</div>
-  </div>
+  
+ <!--    <div class="col-md-3"> -->
+    	<%#= f.submit "X", :method => :delete, :id => @user.id %>
+    <!-- </div> -->
+   </div>
   </div>
 
   <div class="control-submit">
@@ -76,3 +80,32 @@
 	<%= javascript_include_tag '../../javascripts/bootstrap.min.js' %>
 
 </body>
+
+
+<script type="text/javascript">
+var i=1;
+	function add_responce_field()
+	{
+		/*
+			$(".container").append('<div class="row"><div class="col-md-4"><%#= f.label :project %><%#= f.text_field :project, :class => "col-md-12 form-control" %></div><div class="col-md-4"><%#= f.label :hour %><%#= f.text_field :hour, :class => "col-md-12 form-control" %></div><div class="col-md-4"><%#= f.label :description %><%#= f.text_area :description, :class => "col-md-12 form-control"%></div></div>');
+			*/
+
+			$(".container").append('<div class="row"><div class="col-md-4"><label for="user_project">Project</label><input class="col-md-12 form-control" id="user_project" name="user[project]['+i+']" size="30" type="text"></div><div class="col-md-4"><label for="user_hour">Hour</label><input class="col-md-12 form-control" id="user_hour" name="user[hour]['+i+']" size="30" type="text"></div><div class="col-md-4"><label for="user_description">Description</label><textarea class="col-md-12 form-control" cols="40" id="user_description" name="user[description]['+i+']" rows="20"></textarea></div></div>');
+			i++;
+		}
+
+</script>
+
+ 
+
+
+<div id="welcomeDiv"  style="display:none;" class="answer_list" > WELCOME</div>
+<input type="button" name="answer" value="Show Div" onclick="showDiv()" />
+
+<script type="text/javascript">
+	function showDiv() {
+   document.getElementById('welcomeDiv').style.display = "block";
+
+}
+
+</script>
